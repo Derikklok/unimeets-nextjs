@@ -25,8 +25,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headersList = await headers();
-  const isProtectedRoute = headersList.get('x-protected-route') === 'true';
+  const headersList = headers();
+  const isProtectedRoute = (await headersList).get('x-protected-route') === 'true';
 
   return (
     <html lang="en">

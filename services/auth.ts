@@ -36,3 +36,11 @@ export async function login(credentials: LoginRequest): Promise<LoginResponse> {
 
     return data;
 }
+
+export function logout(): void {
+    // Clear all items from localStorage
+    localStorage.clear();
+    // Or if you want to clear specific items:
+    // localStorage.removeItem('user');
+    // localStorage.removeItem('token');
+}
